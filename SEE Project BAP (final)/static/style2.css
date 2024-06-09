@@ -1,0 +1,354 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('f.jpeg'); /* Assuming the image is named 'f.jpeg' and located in the same directory */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header {
+/* Replace 'your-image-url.jpg' with the URL or path to your image */
+ 
+ /* Decreased opacity: 0.5 */
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: 100px;
+  font-size: xx-large;
+  padding-bottom: 20px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+   /* Adjust this value to control how far down the header is moved */
+
+}
+
+
+
+
+
+
+
+.header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.header p {
+  font-size: 1.2em;
+  color: #000000;
+  
+}
+
+.navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  color: white;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu li {
+  display: inline;
+}
+
+.navbar-menu a {
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  background-color: rgba(225, 223, 223, 0.2);
+}
+
+.content {
+  padding: 80px 40px; /* Adjusted padding to account for fixed navbar */
+  /* background-color: #f9f9f9; */
+}
+.content-box{
+ padding-left: 50px;
+ padding-right: 50px;
+ 
+}
+
+.post {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 10px;
+  background-color: rgba(223, 223, 223, 0.45) !important;; /* Use rgba for background color */
+}
+
+.post h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.post p {
+  line-height: 1.5;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.post a {
+  color: #1a1d26;
+  font-size: small;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
+.comment-box {
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.comment-box h3 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+.comment-box p:first-child {
+  font-weight: bold;
+}
+
+.new-comment form {
+  margin-top: 20px;
+}
+
+.new-comment label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.new-comment textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  resize: vertical;
+}
+
+.new-comment button {
+  background-color: #346ae9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.new-comment button:hover {
+  background-color: #000000;
+}
+
+.author {
+  font-size: 1em;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.cliptext {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Container style for translucency and centering */
+
+.container {
+  width: 400px;
+  margin: 150px auto; /* Centered the container and added space from the top */
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(200, 36, 36, 0.8); /* Translucent background */
+  position: relative;
+  z-index: 2;
+  text-align: center; /* Center the text inside the container */
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container .form-group {
+  margin-bottom: 15px;
+}
+
+.container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="tel"],
+.container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+button {
+  font-size: 18px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow,transform;
+  background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
+  box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+  padding: 0 2em;
+  border-radius: 0.3em;
+  color: #fff;
+  height: 2.6em;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+button:hover {
+  box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+  transform: translateY(-0.1em);
+}
+
+button:active {
+  box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
+  transform: translateY(0em);
+}
+.post {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  border: 2px solid #ccc;
+  background-color: rgba(156, 184, 228, 0.202); /* Very light blue background */
+  border-radius: 20px;
+  box-shadow: 0 15px 8px rgba(0, 0, 0, 0.344); /* Add border-radius to curve the corners */
+  transition: transform 0.3s ease; /* Add transition for zoom effect */
+}
+
+.post:hover {
+  transform: scale(1.05); /* Zoom in effect on hover */
+}
+.post h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding: 10px; /* Adjust the padding for the heading */
+}
+
+.post p {
+  line-height: 1.5;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 0 10px; /* Adjust the padding for the paragraph */
+  
+}
+
+
+
+
+@keyframes pulse512 {
+  0% {
+    box-shadow: 0 0 0 0 #05bada66;
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+  }
+}
+
+.container .form-group textarea {
+  width: 100%;
+  resize: vertical;
+  
+}
+
+.content-box {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+
+.animation-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  animation: typing 5s steps(25, end), blink-caret .5s step-end infinite alternate;
+}
+
+.animation {
+  font: bold 100% Consolas, Monaco, monospace;
+  border-right: .05em solid black;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-bottom: 0px;
+  position: absolute; /* Position text absolutely within the wrapper */
+  left: 50%; /* Start from the center */
+  transform: translateX(-50%); /* Center align the text */
+  animation: typing 5s steps(25, end), blink-caret .5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30.30ch;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: rgba(0, 0, 0, 0); }
+}

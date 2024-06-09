@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughtflow- home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+
+<style>
+
+    pre {
+        white-space: pre-line;
+        font-size: large;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <a href="{{ url_for('home') }}" class="navbar-brand">
+                <img src="{{ url_for('static', filename='THOUGHT_FLOW-removebg-preview.png') }}" alt="Blogger Logo" class="navbar-logo">
+                THOUGHT FLOW
+            </a>
+            {% if status %}
+      <ul class="navbar-menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('newblog') }}">New Blog</a></li>
+        <li><a href="{{ url_for('signout') }}">Sign Out</a></li>
+      </ul>
+      {% else %}
+      <ul class="navbar-menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+      </ul>
+      {% endif %}
+        </div>
+    </div>
+    <header class="header">
+        <h1>Welcome to Thought Flow</h1>
+        <div class="animation">Let your thoughts flow!</p>
+    </header>
+
+    <main class="content">
+        {% for post in blog_posts %}
+        <article class="post">
+            <h2>{{ post[1] }}</h2>
+            <pre><p class = 'cliptext'>{{ post[2] }}</p></pre>
+            <a href="{{ url_for('blog', blogid = post[0]) }}">Read More</a>
+            <p class="author">By {{ post[3] }}</p>
+        </article>
+        {% endfor %}
+    </main>
+
+</body>
+
+</html>

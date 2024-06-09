@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thoughtflow- Edit Blog</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style4.css') }}">
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="navbar-container">
+      <a href="{{ url_for('home') }}" class="navbar-brand">
+        <img src="{{ url_for('static', filename='THOUGHT_FLOW-removebg-preview.png') }}" alt="Blogger Logo"
+          class="navbar-logo">
+        THOUGHT FLOW
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('newblog') }}">New Blog</a></li>
+        <li><a href="{{ url_for('signout') }}">SignOut</a></li>
+      </ul>
+    </div>
+  </div> <!-- Close .navbar -->
+
+  <div class="big_container">
+    <h1>Edit Blog Post</h1>
+    <form method="post">
+      <div class="form-group">
+        <label for="blogTitle">Blog Title:</label>
+        <input type="text" id="blogTitle" name="blogTitle" value="{{ title }}" required>
+      </div>
+      <div class="form-group">
+        <input type="hidden" name="blog-id" value="{{ blogid }}">
+        <label for="blogContent">Blog Content:</label>
+        <textarea id="blogContent" name="blogContent" rows="20" required>{{ content }}</textarea>
+      </div>
+      <button type="submit" class="button">Update Post</button>
+    </form>
+  </div>
+</body>
+
+</html>

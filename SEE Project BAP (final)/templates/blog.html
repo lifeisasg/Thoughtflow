@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thoughtflow- {{title}}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+
+<style>
+  pre {
+    white-space: pre-line;
+  }
+</style>
+
+<body>
+  <div class="navbar">
+    <div class="navbar-container">
+      <a href="{{ url_for('home') }}" class="navbar-brand">
+        <img src="{{ url_for('static', filename='THOUGHT_FLOW-removebg-preview.png') }}" alt="Blogger Logo"
+          class="navbar-logo">
+        THOUGHT FLOW
+      </a>
+      {% if status %}
+      <ul class="navbar-menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('newblog') }}">New Blog</a></li>
+        <li><a href="{{ url_for('signout') }}">Sign Out</a></li>
+      </ul>
+      {% else %}
+      <ul class="navbar-menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+      </ul>
+      {% endif %}
+    </div>
+  </div> <!-- Close .navbar -->
+  <header class="header">
+    <h1>{{title}}</h1>
+    <p>- by {{author}}</p>
+  </header>
+
+  <div class="content-box" style="font-family:Times New Roman">
+    <pre><p>{{content}}</p></pre>
+    <p></p>
+  </div>
+
+  <div class="comment-box">
+    <h3>Comments</h3>
+    {% for comment in comments %}
+    <p style="font-weight: bold;">{{ comment[0] }}:</p>
+    <p>{{ comment[1] }}</p><br>
+    {% endfor %}
+
+    <div class="new-comment">
+      <form method="post">
+        <input type="hidden" name="blog-id" value="{{ blogid }}">
+        <label for="new-comment">Leave a comment:</label><br>
+        <textarea id="new-comment" name="new-comment" required rows="10"></textarea><br>
+        <button type="submit">Add Comment</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
